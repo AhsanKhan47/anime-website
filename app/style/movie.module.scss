@@ -1,0 +1,40 @@
+.yellowGreen{
+    color: rgb(175, 254, 16);
+    transition: .2s all ease-in;
+    &:hover{
+        color: rgb(227, 254, 176);
+
+    }
+} 
+.title{
+    font-size: 35px;
+    font-weight: 1000;
+    color: yellowgreen;
+    margin: 5rem;
+    margin-bottom: 8rem;
+    text-align: center;
+}
+.main{
+    width: 100%;
+    display: grid;
+    margin: auto;
+    gap: 7rem;
+    grid-template-columns: repeat(auto-fill, 286px);   
+    align-items: center;
+    justify-content: center;     
+    li{
+        height: 400px;
+        width: 325px;
+        list-style: none;
+        margin: auto;
+        img{
+            margin: auto;
+            height: 400px;
+        width: 325px;
+
+        }
+        p{
+            padding-top: 1rem;
+        }
+    }
+}

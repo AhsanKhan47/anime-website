@@ -1,0 +1,101 @@
+.center{
+    text-align: center;
+    padding: 3rem;
+}
+
+
+.title{
+    font-size: 35px;
+    font-weight: 1000;
+    color: yellowgreen;
+    margin: 5rem;
+    margin-bottom: 8rem;
+    text-align: center;
+}
+.main{
+    width: 100%;
+    display: grid;
+    margin: auto;
+    gap: 7rem;
+    grid-template-columns: repeat(auto-fill, 286px);   
+    align-items: center;
+    justify-content: center;      
+    
+    li{
+        height: 400px;
+        width: 325px;
+        list-style: none;
+        margin: auto;
+        img{
+            margin: auto;
+            height: 400px;
+        width: 325px;
+
+        }
+        p{
+            padding-top: 1rem ;
+        }
+        h4{
+            color: rgb(200, 255, 89);
+        }
+    }
+}
+.yellowGreen{
+    color: yellowgreen;
+}
+.card{
+    display: flex;
+    padding-top: 2rem;
+    justify-content: center;
+    .cardInfo{
+        display: block;  
+        padding: 3rem;
+        width: 50%;
+
+    }
+}
+
+@media only screen and (max-width: 40em) { /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+    .card{
+        width: 80%;
+        margin: auto;
+        .imgCont{
+            height: 280px;
+            width: 180px;
+            img{
+                height: 280px;
+                width: 180px;
+            }
+        }
+        .cardInfo{
+            display: block;  
+            padding: 1rem;
+            width: 70%;
+            h2{font-size: 16px;}
+            h3{font-size: 13px;}
+    
+        }
+    }
+    
+} 
+
+@media only screen and (max-width: 25em) { 
+    .card {
+        .imgCont{
+            height: 240px;
+            width: 150px;
+            img{
+                height: 240px;
+                width: 150px;
+            }
+        }
+   
+    .cardInfo{
+        width: 100%;
+        padding-right: 0;
+        h2{font-size: 12px;}
+        h3{font-size: 10px;}
+    }
+
+} 
+}

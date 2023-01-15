@@ -1,0 +1,31 @@
+.main{
+    margin-top: 40rem;
+    padding: 0 4rem;
+    ul{
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        width: 50%;
+        padding: 1rem;
+        padding-left: 0;
+    li{
+        list-style: none;
+        padding: 0 1rem;
+        padding-left: 0;
+        transition: .1s all ease-in;
+        &:hover{
+            color: greenyellow;
+        }
+    }
+   
+
+    }
+
+}
+.info{
+    width: 50%;
+    h3{
+        padding: .5rem 0;
+    }
+
+}
