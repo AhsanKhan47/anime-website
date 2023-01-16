@@ -20,12 +20,25 @@ async function getPopularPath(params:any){
 }
 
 
+
+// get anime card details
+async function getAnimeDetails(id:string){
+  const res = await fetch(`https://gogoanime.consumet.org/anime-details/${id}`)
+  return res.json();
+}
+
+
+
 export default async function Info({params}:any) {
   // const info = await(getPopularData());
   const cardInfo = await(getPopularPath(params))
-  const {animeId,animeImg, releasedDate, animeTitle} = cardInfo;
+  const {animeId,animeImg, animeTitle} = cardInfo;
     
-  
+  //anime detials card
+  const cardDetail = await(getAnimeDetails(params.info))
+  const {type, episodesAvailable,releasedDate,status, genres,otherNames,  } = cardDetail;
+
+
   return (
      <div>
 
@@ -39,6 +52,10 @@ export default async function Info({params}:any) {
     <h2 > <span className={popular.yellowGreen}> Name:  </span> {animeTitle}</h2>
     <img src={popular.animeImg} alt="" />
     <h3 > <span className={popular.yellowGreen}> Released Date:  </span>{releasedDate }</h3> 
+    <h3 > <span className={popular.yellowGreen}> type:  </span>{type }</h3> 
+    <h3 > <span className={popular.yellowGreen}> status:  </span>{status }</h3> 
+    <h3 > <span className={popular.yellowGreen}> genres:  </span>{genres }</h3> 
+    <h3 > <span className={popular.yellowGreen}> otherNames:  </span>{otherNames }</h3> 
 
     </div>
     </div>

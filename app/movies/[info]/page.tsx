@@ -1,5 +1,12 @@
 import React from 'react'
-import popular from "../../style/popular.module.scss"
+import style from "../../style/movie.module.scss"
+
+// get anime card details
+async function getMoviesDetails(id:string){
+  const res = await fetch(`https://gogoanime.consumet.org/anime-details/${id}`)
+  return res.json();
+}
+
 
 async function getMoviesCard(){
   const res1 = await fetch("https://gogoanime.consumet.org/anime-movies")
@@ -20,22 +27,34 @@ async function getMoviesPath(params: any){
 export default async function MoviesCard({params}:any) {
 
   const cardInfo1 = await (getMoviesPath(params))
-  const {animeImg,animeTitle,releasedDate} = cardInfo1
+  const {animeImg,animeTitle} = cardInfo1
+
+
+  //anime detials card
+  const cardDetail = await(getMoviesDetails(params.info))
+  let {type, episodesAvailable,releasedDate,status, genres,otherNames,episodesAvaliable,  } = cardDetail;
+   genres = genres.map((g:string)=> g)
 
   return (
     <div>
+     
        <div>
 
-<h2 className={popular.center}>Popular Anime of 2023</h2>
-<div className={popular.card}>
-<div className={popular.imgCont}>
+<h1 className={style.heading}>Popular Anime of 2023</h1>
+<div className={style.card}>
+<div className={style.imgCont}>
 <img src={animeImg} alt="card img" />
 </div>
 
-<div className={popular.cardInfo}>
-<h2 > <span className={popular.yellowGreen}> Name:  </span> {animeTitle}</h2>
-<img src={popular.animeImg} alt="" />
-<h3 > <span className={popular.yellowGreen}> Released Date:  </span>{releasedDate }</h3> 
+
+
+<div className={style.cardInfo}>
+<h2 > <span className={style.yellowGreen}> Name :  </span> {animeTitle}</h2>
+<h3 > <span className={style.yellowGreen}> type :  </span>{type }</h3> 
+<h3 > <span className={style.yellowGreen}> status :  </span>{status }</h3> 
+<h3 > <span className={style.yellowGreen}> Released Date :  </span>{releasedDate }</h3> 
+<h3 > <span className={style.yellowGreen}> genres :  </span>{genres }</h3> 
+<h3 > <span className={style.yellowGreen}> otherNames :  </span>{otherNames }</h3> 
 
 </div>
 </div>

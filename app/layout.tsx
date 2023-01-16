@@ -1,5 +1,5 @@
 import './style/globals.css'
-import Nav from './Nav/Nav'
+import Nav from './Navbar/Nav'
 import Footer from './footer/page'
 
 

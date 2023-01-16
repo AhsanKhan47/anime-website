@@ -11,7 +11,7 @@ import popular from '../style/popular.module.scss'
   let popularAnime = await(getPopularAnime());
   return (
     <>
-        <div className={popular.title}>most popular</div>
+        <div className={popular.title}>Most popular</div>
 
 
 

@@ -16,7 +16,8 @@
     width: 100%;
     display: grid;
     margin: auto;
-    gap: 7rem;
+    gap: 10rem 7rem;
+    
     grid-template-columns: repeat(auto-fill, 286px);   
     align-items: center;
     justify-content: center;      
@@ -49,13 +50,17 @@
     justify-content: center;
     .cardInfo{
         display: block;  
-        padding: 3rem;
+        padding: 1rem;
+        padding-left: 3rem;
         width: 50%;
+        h3{
+            padding-bottom: .5rem;
+        }
 
     }
 }
 
-@media only screen and (max-width: 40em) { /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+@media only screen and (max-width: 940px) { /* max-width 640px, mobile-only styles, use when QAing mobile issues */
     .card{
         width: 80%;
         margin: auto;
@@ -69,7 +74,8 @@
         }
         .cardInfo{
             display: block;  
-            padding: 1rem;
+            padding: 2rem;
+            padding-left: 3rem;
             width: 70%;
             h2{font-size: 16px;}
             h3{font-size: 13px;}
@@ -79,11 +85,18 @@
     
 } 
 
-@media only screen and (max-width: 25em) { 
+@media only screen and (max-width: 640px) { 
     .card {
+       flex-direction: column;
+       align-items: center;
+       justify-content: center;
         .imgCont{
             height: 240px;
-            width: 150px;
+            width: 80%;
+            display: flex;
+            align-items: flex-start;
+            justify-content: flex-start;
+
             img{
                 height: 240px;
                 width: 150px;
@@ -91,10 +104,10 @@
         }
    
     .cardInfo{
-        width: 100%;
-        padding-right: 0;
+        width: 80%;
+        padding: 2rem 0 0 0;
         h2{font-size: 12px;}
-        h3{font-size: 10px;}
+        h3{font-size: 10px; padding-bottom: .5rem;}
     }
 
 } 

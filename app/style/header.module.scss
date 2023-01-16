@@ -3,7 +3,13 @@ $text-sm: 14px;
 $text-md: 18px;
 $text-lg: 24px;
 
+.active{
+  color: greenyellow;
+}
+.default{
+  color: greenyellow;
 
+}
 .red {
   color: rgb(204, 0, 0);
 }
