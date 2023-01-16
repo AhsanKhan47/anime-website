@@ -13,6 +13,12 @@ $text-lg: 24px;
 .red {
   color: rgb(204, 0, 0);
 }
+.loader{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
 
 .flex {
   display: flex;

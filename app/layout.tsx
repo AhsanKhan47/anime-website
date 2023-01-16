@@ -15,12 +15,12 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      
+
       <body>
-        
-      <Nav  />
-      {children}
-      <Footer></Footer>
+
+        <Nav />
+        {children}
+        <Footer></Footer>
       </body>
     </html>
   )
