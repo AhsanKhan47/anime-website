@@ -14,7 +14,7 @@ export default function Nav() {
           height={50} />
       </div>
       <ul>
-        <li><NavLinks href="./">Home</NavLinks></li>
+        <li><NavLinks href="/">Home</NavLinks></li>
         <li><NavLinks href="/movies">Movies</NavLinks></li>
         <li><NavLinks href="/tvseries">TV Series</NavLinks></li>
         <li><NavLinks href="/mostpopular">Most Popular</NavLinks></li>

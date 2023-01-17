@@ -1,7 +1,7 @@
+import Home from "./home/page"
 
-
-export default function Home() {
+export default function page() {
   return (
-    <h1>Home Page</h1>
+    <Home/>
   )
 }
