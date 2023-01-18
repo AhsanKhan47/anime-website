@@ -1,9 +1,11 @@
-import style from "../style/home.module.scss"
-import Link from 'next/link';
-import Image from "next/image"
+import style from "../style/genreNav.module.scss"
+import GenreLinks from "../navlinks/genre-links";
 
-
-export default function home() {
+export default function Home({
+    children,
+  }: {
+    children: React.ReactNode
+  }) {
     // creating a list of genre in an array. each value in list will be used as dynamic route segment/path
     let genre = [
         "action",
@@ -19,26 +21,24 @@ export default function home() {
         "kids",]
     return (
         <>
-            <h1 className={style.textCenter}>Genres</h1>
+            <h1 className={style.heading}>Genres</h1>
+            <h3 className={style.subHeading}>Select a genre</h3>
             <ul className={style.main}>
                 {
                     genre.map(              
                         (genreType) => (
 
-                            <Link href={`/home/${genreType}`}>
-                                {/* <Image className={style.loader} src="/erenGif.gif" alt='logo'
-                                    width={150}
-                                    height={150}></Image> */}
+                         
                                     
-                                <li >{genreType}</li>
-                            </Link>
-
+                                <li > 
+                                <GenreLinks className={style.genreLinks}  href={`/${genreType}`}> {genreType} </GenreLinks>
+                                </li>
+                           
                         )
                     )
                 }
             </ul>
-          
-          
+            {children}
         </>
     )
 }
