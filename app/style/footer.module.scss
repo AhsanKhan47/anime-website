@@ -1,6 +1,7 @@
 .main{
-    margin-top: 70rem;
+    margin-top: 20rem;
     padding: 0 4rem;
+  
     ul{
         display: flex;
         justify-content: flex-start;
@@ -28,4 +29,36 @@
         padding: .5rem 0;
     }
 
+}
+
+@media only screen and (max-width: 746px) { /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+ 
+    .main{
+        padding: 0 2rem;
+        ul{
+            width: 100%;
+            padding: 0 0 1rem 0;
+            li{
+                padding: 0 5px ;
+                font-size: 12px;
+            }
+        }
+
+ 
+        .info{
+            width: 100%;
+            h3{
+                padding: 5px 0;
+                font-size: 11px;
+                text-decoration: underline;
+                transition: .3s all ease;
+            }
+            // P{
+            //     font-size: 12px;
+            // }
+        
+        }   }
+}
+.underline{
+    text-decoration: underline;
 }

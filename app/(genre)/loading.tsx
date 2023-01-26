@@ -1,6 +1,5 @@
-import React from "react";
 import Image from "next/image";
-import style from "./style/header.module.scss";
+import style from "../style/header.module.scss";
 
 export default function loading() {
   return (
@@ -11,6 +10,7 @@ export default function loading() {
         alt="logo"
         width={150}
         height={150}
+        style={{ marginTop: "20rem" }}
       ></Image>
     </div>
   );

@@ -1,19 +1,18 @@
-import Link from 'next/link';
-import popular from '../style/popular.module.scss'
+import Link from "next/link";
+import popular from "../style/popular.module.scss";
 
 async function getPopularAnime() {
-  const res = await fetch("https://gogoanime.consumet.org/popular");
+  const res = await fetch("https://gogoanime.consumet.org/popular", {
+    cache: "force-cache",
+  });
   return res.json();
-};
+}
 
 export default async function page() {
-
-  let popularAnime = await (getPopularAnime());
+  let popularAnime = await getPopularAnime();
   return (
     <>
       <div className={popular.title}>Most popular</div>
-
-
 
       <ul className={popular.main}>
         {popularAnime.slice(0, 8).map((popular: any) => (
@@ -22,14 +21,12 @@ export default async function page() {
               <img src={popular.animeImg} alt="most popular image" />
             </Link>
             <p>{popular.animeTitle}</p>
-            <h4 className={popular.yg}>Released date : {popular.releasedDate}</h4>
+            <h4 className={popular.yg}>
+              Released date : {popular.releasedDate}
+            </h4>
           </li>
         ))}
       </ul>
-
-
-
     </>
-  )
+  );
 }
-

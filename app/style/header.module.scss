@@ -13,6 +13,9 @@ $text-lg: 24px;
 .red {
   color: rgb(204, 0, 0);
 }
+.loaderContainter{
+  height: 100vh;
+}
 .loader{
   position: absolute;
   top: 50%;
@@ -81,3 +84,51 @@ $text-lg: 24px;
   border-radius: 50%;
 }
 
+
+
+
+
+
+
+
+//hamburger stylin
+
+// .hamburger{
+//   display: none;
+// }
+// @media only screen and (max-width: 900px){
+//   .hamburger{
+//     display: block;
+//     cursor: pointer;
+//     .line{
+//       width: 30px;
+//       height: 3px;
+//       background-color: aliceblue;
+//       margin: 6px 0;
+//     }
+   
+//     }
+//   }
+//   .nav{
+//     position: absolute;
+//     top: 0px;
+//     height: 0px;
+//     left: 0;
+//     right: 0;
+//     transition: 0.2s;
+//     overflow: hidden;
+    
+//     ul{
+//       display: block;
+//       margin: -20rem auto 0 auto;
+//       text-align: center;
+//       opacity: 0;
+//       li{
+//         margin-bottom: 2rem;
+//       }
+//     }
+// }
+// .activee{
+//   color: green;
+//   background-color: blue;
+// }
