@@ -3,20 +3,24 @@ $text-sm: 14px;
 $text-md: 18px;
 $text-lg: 24px;
 
-.active{
+.active {
   color: yellowgreen;
 }
-.default{
+
+.default {
   color: greenyellow;
 
 }
+
 .red {
   color: rgb(204, 0, 0);
 }
-.loaderContainter{
+
+.loaderContainter {
   height: 100vh;
 }
-.loader{
+
+.loader {
   position: absolute;
   top: 50%;
   left: 50%;
@@ -52,83 +56,76 @@ $text-lg: 24px;
 
   ul {
     display: flex;
-  
-      
+
+
 
     li {
       list-style: none;
       padding: 0 1rem;
       transition: .1s all ease-in;
-      &:hover{
-        color: greenyellow;      }
-  }
 
-  }
-  .login{
-   button{
-    padding: .5rem 1rem;
-    background-color: yellowgreen;
-    color: black;
-    border-radius: 5px;
-    border: 2px solid rgb(213, 213, 213);
-    font-size: $text-md;
-    transition: .3s all ease-in;
-    &:hover{
-      background-color: rgb(212, 253, 130);
-
+      &:hover {
+        color: greenyellow;
+      }
     }
-   }
+
   }
+
+
 }
+
 .imgrad {
   border-radius: 50%;
 }
 
+// hamburger styling
+.hamburger {
+  display: none;
+}
 
 
+.mobileNav {
+  display: none;
+}
 
 
+@media only screen and (max-width: 746px) {
+
+  /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 
 
+  .mobileNav {
+    display: flex;
+    float: right;
+    min-width: 15%;
+    margin: 0 0 1rem 1rem;
 
-//hamburger stylin
 
-// .hamburger{
-//   display: none;
-// }
-// @media only screen and (max-width: 900px){
-//   .hamburger{
-//     display: block;
-//     cursor: pointer;
-//     .line{
-//       width: 30px;
-//       height: 3px;
-//       background-color: aliceblue;
-//       margin: 6px 0;
-//     }
-   
-//     }
-//   }
-//   .nav{
-//     position: absolute;
-//     top: 0px;
-//     height: 0px;
-//     left: 0;
-//     right: 0;
-//     transition: 0.2s;
-//     overflow: hidden;
-    
-//     ul{
-//       display: block;
-//       margin: -20rem auto 0 auto;
-//       text-align: center;
-//       opacity: 0;
-//       li{
-//         margin-bottom: 2rem;
-//       }
-//     }
-// }
-// .activee{
-//   color: green;
-//   background-color: blue;
-// }
+    ul {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: space-around;
+
+      height: 10rem;
+      border-radius: 2rem 0rem 0rem 2rem;
+      padding: 15px;
+      list-style: none;
+      width: 100%;
+      background: rgba(153, 205, 50, 0.339);
+
+      li {
+        padding-bottom: 3px;
+        font-size: 13px;
+      }
+    }
+  }
+
+  .nav {
+    ul {
+      display: none;
+    }
+  }
+
+
+}
