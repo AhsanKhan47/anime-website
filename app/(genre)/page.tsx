@@ -11,8 +11,6 @@ async function getGenreDetails2() {
 
 export default async function Hpage({ params }: any) {
   let genreDetails = await getGenreDetails2();
-  //   const {animeId} = genreDetails
-  //   const {  animeTitle } = GenreDetails;
 
   return (
     <div>
