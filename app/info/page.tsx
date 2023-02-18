@@ -5,6 +5,7 @@ export default function Info() {
   return (
     <div className={style.container}>
       {/* <h1>About me</h1> */}
+    
       {/* <p>Hi, I'm a student of PIAIC</p> */}
       <section className={style.info}>
         <ul>

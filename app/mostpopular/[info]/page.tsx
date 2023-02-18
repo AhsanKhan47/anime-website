@@ -1,6 +1,6 @@
 import popular from "../../style/popular.module.scss";
 async function getPopularCard() {
-  const data = await fetch("https://gogoanime.consumet.org/popular");
+  const data = await fetch("https://gogoanime.consumet.stream/popular");
   const myData = data.json();
   return myData;
 }
@@ -14,7 +14,9 @@ async function getPopularPath(params: any) {
 
 // get anime card details
 async function getAnimeDetails(id: string) {
-  const res = await fetch(`https://gogoanime.consumet.org/anime-details/${id}`);
+  const res = await fetch(
+    `https://gogoanime.consumet.stream/anime-details/${id}`
+  );
   return res.json();
 }
 

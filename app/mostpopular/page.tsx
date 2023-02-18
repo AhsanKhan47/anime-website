@@ -2,7 +2,7 @@ import Link from "next/link";
 import popular from "../style/popular.module.scss";
 
 async function getPopularAnime() {
-  const res = await fetch("https://gogoanime.consumet.org/popular", {
+  const res = await fetch("https://gogoanime.consumet.stream/popular", {
     cache: "force-cache",
   });
   return res.json();

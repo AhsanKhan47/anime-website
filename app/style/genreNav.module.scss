@@ -1,13 +1,15 @@
-.heading{ 
+.heading {
     padding: 3rem 0 2rem 3rem;
     font-size: 35px;
     color: yellowgreen;
 }
-.subHeading{ 
+
+.subHeading {
     padding: 0rem 0 2rem 3rem;
     font-size: 25px;
 }
-.genreLinks2{
+
+.genreLinks2 {
     padding: .5rem 1rem;
     border-radius: 3rem;
 
@@ -16,13 +18,15 @@
     transition: .2s all ease-in;
     color: #000;
     background-color: rgb(255, 255, 255);
-    &:hover{
+
+    &:hover {
         color: rgb(255, 255, 255);
         font-weight: 800;
-        background-color:yellowgreen ;
+        background-color: yellowgreen;
     }
 }
-.main{
+
+.main {
     width: 50%;
     margin: 2rem;
     display: flex;
@@ -33,10 +37,11 @@
     align-items: center;
     justify-content: center;
     align-content: center;
-    
-        li{list-style: none;
-          
-          .genreLinks{
+
+    li {
+        list-style: none;
+
+        .genreLinks {
             padding: .5rem 1rem;
             border-radius: 3rem;
             font-size: 15px;
@@ -45,70 +50,76 @@
             border: 3px solid yellowgreen;
             color: #000;
             background-color: yellowgreen;
-            &:hover{
+
+            &:hover {
                 color: rgb(255, 255, 255);
                 font-weight: 800;
-                background-color:yellowgreen ;
+                background-color: yellowgreen;
             }
-          }
         }
-    
-    
+    }
+
+
 }
-.genreItem{
+
+.genreItem {
     text-align: center;
 }
 
-@media only screen and (max-width: 45em) { /* max-width 640px, mobile-only styles, use when QAing mobile issues */
-    .genreLinks2{
+@media only screen and (max-width: 45em) {
+
+    /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+    .genreLinks2 {
         padding: .5rem .5rem;
         border-radius: 2rem;
         font-size: 15px;
-        &:hover{
+
+        &:hover {
             color: rgb(255, 255, 255);
             font-weight: 800;
-            background-color:yellowgreen ;
+            background-color: yellowgreen;
         }
     }
-   
-    .main{
+
+    .main {
         width: 80%;
         grid-gap: 2.5rem 1.5rem;
-      
-        
-            li{
-              
-              .genreLinks{
+
+
+        li {
+
+            .genreLinks {
                 padding: .5rem .5rem;
                 border-radius: 2rem;
-              }
             }
+        }
     }
- 
-} 
 
-@media only screen and (max-width: 25em) { 
-    .genreLinks2{
+}
+
+@media only screen and (max-width: 25em) {
+    .genreLinks2 {
         padding: .5rem .5rem;
         border-radius: 2rem;
         text-align: center;
     }
-   
-    .main{
+
+    .main {
         width: 90%;
-        grid-gap: 1.5rem .5rem;
+        grid-gap: 2rem .5rem;
         margin: auto;
         padding: 3rem 0;
-      
-        
-        
+
+
+
     }
 
-    .heading{ 
+    .heading {
         padding: 3rem 0 1rem 3rem;
         font-size: 30px;
     }
-    .subHeading{ 
+
+    .subHeading {
         padding: 0rem 0 0rem 3rem;
         font-size: 20px;
     }

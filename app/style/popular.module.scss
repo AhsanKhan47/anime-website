@@ -1,10 +1,10 @@
-.center{
+.center {
     text-align: center;
     padding: 3rem;
 }
 
 
-.title{
+.title {
     font-size: 35px;
     font-weight: 1000;
     color: yellowgreen;
@@ -12,103 +12,224 @@
     margin-bottom: 8rem;
     text-align: center;
 }
-.main{
+
+.main {
     width: 100%;
     display: grid;
     margin: auto;
     gap: 10rem 7rem;
-    
-    grid-template-columns: repeat(auto-fill, 286px);   
+
+    grid-template-columns: repeat(auto-fill, 286px);
     align-items: center;
-    justify-content: center;      
-    
-    li{
-        height: 400px;
-        width: 325px;
+    justify-content: center;
+
+    li {
+        height: 350px;
+        width: 285px;
         list-style: none;
         margin: auto;
-        img{
+
+        img {
             margin: auto;
-            height: 400px;
-        width: 325px;
+            height: 350px;
+            width: 285px;
 
         }
-        p{
-            padding-top: 1rem ;
+
+        p {
+            padding-top: 1rem;
         }
-        h4{
+
+        h4 {
             color: rgb(200, 255, 89);
         }
     }
 }
-.yellowGreen{
+
+.yellowGreen {
     color: yellowgreen;
 }
-.card{
+
+
+@media only screen and (max-width: 740px) {
+
+    /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+    .main {
+        width: 90%;
+        display: flex;
+        margin: 3rem 1rem;
+        margin-bottom: 15rem;
+        align-items: center;
+        align-content: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+
+        align-items: center;
+        float: left;
+        gap: 10rem 2rem;
+
+        li {
+
+            height: 250px;
+            width: 185px;
+            list-style: none;
+
+
+            img {
+                height: 250px;
+                width: 185px;
+
+            }
+
+            p {
+                padding-top: .3rem;
+                font-size: 14px;
+            }
+        }
+    }
+
+
+
+    .btmCard {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+
+    }
+
+
+}
+
+@media only screen and (max-width: 500px) {
+
+    .main {
+        width: 100%;
+        display: flex;
+        margin: 3rem 1rem 5rem 1rem;
+        padding: 0 1rem;
+        align-items: center;
+        align-content: center;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        align-items: center;
+        float: left;
+        gap: 1rem 1rem;
+
+        li {
+
+            height: 250px;
+            width: 125px;
+            list-style: none;
+
+
+            img {
+                height: 150px;
+                width: 125px;
+
+            }
+
+            p {
+                padding-top: .3rem;
+                font-size: 11px;
+            }
+
+            h4 {
+                font-size: 11px;
+            }
+        }
+    }
+}
+
+
+
+// Inner card styling
+.card {
     display: flex;
     padding-top: 2rem;
     justify-content: center;
-    .cardInfo{
-        display: block;  
+
+    .cardInfo {
+        display: block;
         padding: 1rem;
         padding-left: 3rem;
         width: 50%;
-        h3{
+
+        h3 {
             padding-bottom: .5rem;
         }
 
     }
 }
 
-@media only screen and (max-width: 940px) { /* max-width 640px, mobile-only styles, use when QAing mobile issues */
-    .card{
+@media only screen and (max-width: 940px) {
+
+    /* max-width 640px, mobile-only styles, use when QAing mobile issues */
+    .card {
         width: 80%;
         margin: auto;
-        .imgCont{
+
+        .imgCont {
             height: 280px;
             width: 180px;
-            img{
+
+            img {
                 height: 280px;
                 width: 180px;
             }
         }
-        .cardInfo{
-            display: block;  
+
+        .cardInfo {
+            display: block;
             padding: 2rem;
             padding-left: 3rem;
             width: 70%;
-            h2{font-size: 16px;}
-            h3{font-size: 13px;}
-    
+
+            h2 {
+                font-size: 16px;
+            }
+
+            h3 {
+                font-size: 13px;
+            }
+
         }
     }
-    
-} 
 
-@media only screen and (max-width: 640px) { 
+}
+
+@media only screen and (max-width: 640px) {
     .card {
-       flex-direction: column;
-       align-items: center;
-       justify-content: center;
-        .imgCont{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        .imgCont {
             height: 240px;
             width: 80%;
             display: flex;
             align-items: flex-start;
             justify-content: flex-start;
 
-            img{
+            img {
                 height: 240px;
                 width: 150px;
             }
         }
-   
-    .cardInfo{
-        width: 80%;
-        padding: 2rem 0 0 0;
-        h2{font-size: 12px;}
-        h3{font-size: 10px; padding-bottom: .5rem;}
-    }
 
-} 
+        .cardInfo {
+            width: 80%;
+            padding: 2rem 0 0 0;
+
+            h2 {
+                font-size: 12px;
+            }
+
+            h3 {
+                font-size: 10px;
+                padding-bottom: .5rem;
+            }
+        }
+
+    }
 }
