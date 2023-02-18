@@ -148,7 +148,7 @@
     display: flex;
     padding-top: 2rem;
     justify-content: center;
-
+margin: auto;
     .cardInfo {
         display: block;
         padding: 1rem;
@@ -168,6 +168,8 @@
     .card {
         width: 80%;
         margin: auto;
+        
+
 
         .imgCont {
             height: 280px;
@@ -203,6 +205,7 @@
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        margin: 5rem auto;
 
         .imgCont {
             height: 240px;

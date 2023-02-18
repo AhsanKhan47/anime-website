@@ -18,9 +18,7 @@ export default async function DynamicHome({ params }: any) {
       <ul className={movie.main}>
         {genreDetails.slice(1, 10).map((p: any) => (
           <li key={p.animeId}>
-            <Link href={`/subid`}>
-              <img src={p.animeImg} alt={p.animeId} />
-            </Link>
+            <img src={p.animeImg} alt={p.animeId} />
 
             <p>{p.animeTitle}</p>
             <div className={movie.btmCard}>
