@@ -2,7 +2,9 @@ import movie from "../../style/genreCards.module.scss";
 import Link from "next/link";
 async function getGenreDetails(id: any) {
   // in parameter param's id will be passed while invoke
-  const res = await fetch(`https://gogoanime.consumet.stream/genre/${id}`);
+  const res = await fetch(`https://gogoanime.consumet.stream/genre/${id}`, {
+    cache: "force-cache",
+  });
   return res.json();
 }
 
