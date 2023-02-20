@@ -22,11 +22,16 @@ $text-lg: 24px;
 
 .loader {
   position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.genreLoader {
+  position: absolute;
   top: 120%;
   left: 50%;
   transform: translate(-50%, -50%);
 }
-
 .flex {
   display: flex;
   align-items: center;

@@ -5,7 +5,7 @@ export default function loading() {
   return (
     <div className={style.loaderContainter}>
       <Image
-        className={style.loader}
+        className={style.genreLoader}
         src="/erenGif.gif"
         alt="logo"
         width={150}
