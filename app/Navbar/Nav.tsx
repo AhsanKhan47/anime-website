@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useState } from "react";
 import header from "../style/header.module.scss";
 import Link from "next/link";
 import NavLinks from "../navlinks/nav-links";
@@ -34,7 +33,7 @@ export default function Nav() {
               <li>
                 <NavLinks href="/mostpopular">Most Popular</NavLinks>
               </li>
-              <li>
+              <li className={header.lastLi}>
                 <NavLinks href="/info">About Dev</NavLinks>
               </li>
             </ul>
@@ -47,23 +46,6 @@ export default function Nav() {
  </a>
 </div> */}
       </nav>
-
-      <div className={header.mobileNav}>
-        <ul>
-          <li>
-            <NavLinks href="/">Home</NavLinks>
-          </li>
-          <li>
-            <NavLinks href="/movies">Movies</NavLinks>
-          </li>
-          <li>
-            <NavLinks href="/mostpopular">Most Popular</NavLinks>
-          </li>
-          <li>
-            <NavLinks href="/info">About Dev</NavLinks>
-          </li>
-        </ul>
-      </div>
     </>
   );
 }

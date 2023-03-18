@@ -89,46 +89,26 @@ $text-lg: 24px;
 }
 
 
-.mobileNav {
-  display: none;
-}
+
 
 
 @media only screen and (max-width: 746px) {
 
   /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 
-
-  .mobileNav {
-    display: flex;
-    float: right;
-    min-width: 15%;
-    margin: 0 0 1rem 1rem;
-
-
-    ul {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: space-around;
-
-      height: 10rem;
-      border-radius: 2rem 0rem 0rem 2rem;
-      padding: 15px;
-      list-style: none;
-      width: 100%;
-      background: rgba(153, 205, 50, 0.339);
-
-      li {
-        padding-bottom: 3px;
-        font-size: 13px;
-      }
-    }
-  }
-
   .nav {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 1rem;
     ul {
-      display: none;
+      .lastLi{
+        display: none;
+      }
+      li{
+        padding: 1.5rem .5rem;
+        font-size: 14px;
+
+      }
     }
   }
 
