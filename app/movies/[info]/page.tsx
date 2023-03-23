@@ -6,11 +6,21 @@ async function getMoviesDetails(id: string) {
   const res = await fetch(
     `https://gogoanime.consumet.stream/anime-details/${id}`
   );
+  if (!res.ok) {
+    throw new Error(
+      "The gogoanime api is down at the moment please try again later"
+    );
+  }
   return res.json();
 }
 
 async function getMoviesCard() {
   const res1 = await fetch("https://gogoanime.consumet.stream/anime-movies");
+  if (!res1.ok) {
+    throw new Error(
+      "The gogoanime api is down at the moment please try again later"
+    );
+  }
   const myData = res1.json();
   return myData;
 }

@@ -1,6 +1,11 @@
 import popular from "../../style/popular.module.scss";
 async function getPopularCard() {
   const data = await fetch("https://gogoanime.consumet.stream/popular");
+  if (!data.ok) {
+    throw new Error(
+      "The gogoanime api is down at the moment please try again later"
+    );
+  }
   const myData = data.json();
   return myData;
 }
@@ -17,6 +22,11 @@ async function getAnimeDetails(id: string) {
   const res = await fetch(
     `https://gogoanime.consumet.stream/anime-details/${id}`
   );
+  if (!res.ok) {
+    throw new Error(
+      "The gogoanime api is down at the moment please try again later"
+    );
+  }
   return res.json();
 }
 

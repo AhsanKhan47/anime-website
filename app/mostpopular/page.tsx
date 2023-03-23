@@ -5,6 +5,11 @@ async function getPopularAnime() {
   const res = await fetch("https://gogoanime.consumet.stream/popular", {
     cache: "force-cache",
   });
+  if (!res.ok) {
+    throw new Error(
+      "The gogoanime api is down at the moment please try again later"
+    );
+  }
   return res.json();
 }
 

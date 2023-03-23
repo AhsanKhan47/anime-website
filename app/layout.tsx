@@ -1,12 +1,11 @@
-import './style/globals.css'
-import Nav from './Navbar/Nav'
-import Footer from './footer/page'
-
+import "./style/globals.css";
+import Nav from "./Navbar/Nav";
+import Footer from "./footer/page";
 
 export default function RootLayout({
   children,
 }: {
-  children: React.ReactNode
+  children: React.ReactNode;
 }) {
   return (
     <html lang="en">
@@ -17,11 +16,10 @@ export default function RootLayout({
       <head />
 
       <body>
-
         <Nav />
         {children}
         <Footer></Footer>
       </body>
     </html>
-  )
+  );
 }

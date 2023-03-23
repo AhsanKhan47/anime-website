@@ -3,6 +3,11 @@ import movie from "../style/movie.module.scss";
 
 async function getAnime() {
   const anime = await fetch("https://gogoanime.consumet.stream/anime-movies");
+  if (!anime.ok) {
+    throw new Error(
+      "The gogoanime api is down at the moment please try again later"
+    );
+  }
   return anime.json();
 }
 
