@@ -1,6 +1,8 @@
 import popular from "../../style/popular.module.scss";
 async function getPopularCard() {
-  const data = await fetch("https://gogoanime.consumet.stream/popular");
+  const data = await fetch(
+    "https://api.consumet.org/anime/gogoanime/top-airing"
+  );
   if (!data.ok) {
     throw new Error(
       "The gogoanime api is down at the moment please try again later"
@@ -12,15 +14,18 @@ async function getPopularCard() {
 
 async function getPopularPath(params: any) {
   const myData = await getPopularCard();
+  console.log(myData);
 
-  const cardInfo = myData.find((card: any) => card.animeId == params.info);
+  const cardInfo = myData.results.find((card: any) => card.id == params.info);
+  console.log(cardInfo);
+
   return cardInfo;
 }
 
 // get anime card details
 async function getAnimeDetails(id: string) {
   const res = await fetch(
-    `https://gogoanime.consumet.stream/anime-details/${id}`
+    `https://api.consumet.org/anime/gogoanime/info/${id}`
   );
   if (!res.ok) {
     throw new Error(
@@ -33,7 +38,7 @@ async function getAnimeDetails(id: string) {
 export default async function Info({ params }: any) {
   // const info = await(getPopularData());
   const cardInfo = await getPopularPath(params);
-  const { animeId, animeImg, animeTitle } = cardInfo;
+  const { id, image, title } = cardInfo;
 
   //anime detials card
   const cardDetail = await getAnimeDetails(params.info);
@@ -42,23 +47,23 @@ export default async function Info({ params }: any) {
 
   return (
     <div>
-      <h2 className={popular.center}>Popular Anime of 2023</h2>
+      <h2 className={popular.center}>Top Airing Anime of 2023</h2>
       <div className={popular.card}>
         <div className={popular.imgCont}>
-          <img src={animeImg} alt="card img" />
+          <img src={image} alt="card img" />
         </div>
 
         <div className={popular.cardInfo}>
           <h2>
             {" "}
-            <span className={popular.yellowGreen}> Name: </span> {animeTitle}
+            <span className={popular.yellowGreen}> Name: </span> {title}
           </h2>
-          <img src={popular.animeImg} alt="" />
-          <h3>
+          <img src={popular.image} alt="" />
+          {/* <h3>
             {" "}
             <span className={popular.yellowGreen}> Released Date: </span>
             {releasedDate}
-          </h3>
+          </h3> */}
           <h3>
             {" "}
             <span className={popular.yellowGreen}> type: </span>
@@ -72,13 +77,15 @@ export default async function Info({ params }: any) {
           <h3>
             {" "}
             <span className={popular.yellowGreen}> genres: </span>
-            {genres}
+            {genres.map((genre: string) => (
+              <span className={popular.mr}>{genre}</span>
+            ))}
           </h3>
-          <h3>
+          {/* <h3>
             {" "}
             <span className={popular.yellowGreen}> otherNames: </span>
             {otherNames}
-          </h3>
+          </h3> */}
         </div>
       </div>
     </div>

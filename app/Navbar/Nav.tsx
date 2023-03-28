@@ -28,10 +28,10 @@ export default function Nav() {
                 <NavLinks href="/">Home</NavLinks>
               </li>
               <li>
-                <NavLinks href="/movies">Movies</NavLinks>
+                <NavLinks href="/movies">Recent Episodes</NavLinks>
               </li>
               <li>
-                <NavLinks href="/mostpopular">Most Popular</NavLinks>
+                <NavLinks href="/mostpopular">Top Airing</NavLinks>
               </li>
               <li className={header.lastLi}>
                 <NavLinks href="/info">About Dev</NavLinks>
