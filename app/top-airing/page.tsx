@@ -26,7 +26,7 @@ export default async function page() {
       <ul className={popular.main}>
         {popularAnime.results.map((popular: any) => (
           <li key={popular.id}>
-            <Link href={`/mostpopular/${popular.id}`}>
+            <Link href={`/top-airing/${popular.id}`}>
               <img src={popular.image} alt="most popular image" />
             </Link>
             <p>{popular.title}</p>

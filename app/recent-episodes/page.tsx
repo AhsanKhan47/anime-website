@@ -23,7 +23,7 @@ export default async function MostPopular() {
       <ul className={movie.main}>
         {moviesData1.results.slice(1, 10).map((p: any) => (
           <li key={p.id}>
-            <Link href={`/movies/${p.id}`}>
+            <Link href={`/recent-episodes/${p.id}`}>
               <img src={p.image} alt="anime poster" />
             </Link>
             <p>{p.animeTitle}</p>
@@ -33,7 +33,10 @@ export default async function MostPopular() {
                 {p.episodeNumber}
               </p>
               <p className={movie.yellowGreen}>
-                <Link href={`/movies/${p.id}`} className={movie.seeInfoBtn}>
+                <Link
+                  href={`/recent-episodes/${p.id}`}
+                  className={movie.seeInfoBtn}
+                >
                   {" "}
                   See info
                 </Link>

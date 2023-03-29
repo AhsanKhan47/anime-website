@@ -8,16 +8,13 @@ export default function Footer() {
       <div className={footer.main}>
         <ul>
           <li>
-            <Link href="./movies">Home</Link>
+            <Link href="./">Home</Link>
           </li>
           <li>
-            <Link href="./movies">Movies</Link>
+            <Link href="./recent-episodes">Recent Episodes</Link>
           </li>
           <li>
-            <Link href="./tvseries">TV Series</Link>
-          </li>
-          <li>
-            <Link href="./mostpopular">Most Popular</Link>
+            <Link href="./top-airing"> Top Airing</Link>
           </li>
         </ul>
 
