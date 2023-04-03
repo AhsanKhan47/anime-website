@@ -1,7 +1,11 @@
 import "./style/globals.css";
-import Nav from "./Navbar/Nav";
-import Footer from "./footer/page";
-
+import Nav from "./components/Navbar";
+import Footer from "./components/Footer";
+import { Space_Grotesk } from "@next/font/google";
+const roboto = Space_Grotesk({
+  subsets: ["latin"],
+  weight: ["300"],
+});
 export default function RootLayout({
   children,
 }: {
@@ -15,7 +19,7 @@ export default function RootLayout({
       */}
       <head />
 
-      <body>
+      <body className={roboto.className}>
         <Nav />
         {children}
         <Footer></Footer>

@@ -1,106 +1,62 @@
 import React from "react";
-import style from "../../style/movie.module.scss";
-
-// get anime card details
-async function getMoviesDetails(id: string) {
+import Wrapper from "../../components/wrapper";
+async function getAnimeDetails(id: string) {
   const res = await fetch(
-    `https://api.consumet.org/anime/gogoanime/info/${id}
-    `
+    `https://api.consumet.org/anime/gogoanime/info/${id}`,
+    {
+      cache: "no-store",
+    }
   );
-  if (!res.ok) {
-    throw new Error(
-      "The gogoanime api is down at the moment please try again later"
-    );
-  }
   return res.json();
 }
-
-async function getRecentEpisodes() {
-  const res1 = await fetch(
-    "https://api.consumet.org/anime/gogoanime/recent-episodes"
-  );
-  if (!res1.ok) {
-    throw new Error(
-      "The gogoanime api is down at the moment please try again later"
-    );
-  }
-  const myData = res1.json();
-  return myData;
-}
-
-async function getMoviesPath(params: any) {
-  const myData = await getRecentEpisodes();
-  const cardInfo1 = myData.results.find((card: any) => card.id == params.info);
-  return cardInfo1;
-}
-
-export default async function MoviesCard({ params }: any) {
-  const cardInfo1 = await getMoviesPath(params);
-  const { image, title } = cardInfo1;
-
-  //anime detials card
-  const cardDetail = await getMoviesDetails(params.info);
-  let {
-    type,
-    episodesAvailable,
+export default async function page({ params }: any) {
+  const details = await getAnimeDetails(params.info);
+  const {
+    title,
+    image,
     releaseDate,
-    status,
     totalEpisodes,
-    genres,
-    otherName,
-    episodesAvaliable,
-  } = cardDetail;
-  genres = genres.map((g: string) => g);
-
+    description,
+    type,
+    status,
+  } = details;
   return (
-    <div>
-      <div>
-        <h1 className={style.heading}>Popular Anime of 2023</h1>
-        <div className={style.card}>
-          <div className={style.imgCont}>
-            <img src={image} alt="card img" />
-          </div>
-
-          <div className={style.cardInfo}>
-            <h2>
-              {" "}
-              <span className={style.yellowGreen}> Name : </span> {title}
-            </h2>{" "}
-            <h2>
-              {" "}
-              <span className={style.yellowGreen}> Total Episodes : </span>{" "}
+    <>
+      <Wrapper>
+        <section className="w-10/12 m-auto grid grid-cols-1 md:grid-cols-3 gap-3 md:gap-6 mt-6 md:mt-20 ">
+          <img
+            src={image}
+            alt={title}
+            className="w-full sm:w-1/2 md:w-full  "
+          />
+          <div className=" mr-auto col-span-2 text-white md:font-semibold ">
+            <h1 className="text-white text-2xl md:text-5xl md:font-bold md:mb-4">
+              {title}
+            </h1>
+            <p>
+              <span className="text-secondary">Episodes : </span>
               {totalEpisodes}
-            </h2>
-            <h3>
-              {" "}
-              <span className={style.yellowGreen}> type : </span>
-              {type}
-            </h3>
-            <h3>
-              {" "}
-              <span className={style.yellowGreen}> status : </span>
-              {status}
-            </h3>
-            <h3>
-              {" "}
-              <span className={style.yellowGreen}> Released Date : </span>
+            </p>
+            <p className="my-1">
+              <span className="text-secondary">Released Date : </span>
               {releaseDate}
-            </h3>
-            <h3>
-              {" "}
-              <span className={style.yellowGreen}> genres : </span>
-              {genres.map((genre: string) => (
-                <span className={style.mr}>{genre}</span>
-              ))}{" "}
-            </h3>
-            <h3>
-              {" "}
-              <span className={style.yellowGreen}> otherNames : </span>
-              {otherName}
-            </h3>
+            </p>
+            <p>
+              <span className="text-secondary">Type : </span>
+              {type}
+            </p>
+            <p className="my-1">
+              <span className="text-secondary">Status : </span>
+              {status}
+            </p>
+
+            <p className="text-white text-xs sm:text-base md:text-lg md:leading-8">
+              <span className="text-secondary ">Description : </span>
+              {description}
+            </p>
           </div>
-        </div>
-      </div>
-    </div>
+        </section>
+      </Wrapper>
+    </>
   );
 }

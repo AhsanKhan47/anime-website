@@ -1,7 +1,8 @@
 import { log } from "console";
 import React from "react";
-import Wrapper from "../../components/wrapper";
-async function getTopAiringAnime(id: string) {
+import Wrapper from "../components/wrapper";
+
+async function getAnimeDetails(id: string) {
   const res = await fetch(
     `https://api.consumet.org/anime/gogoanime/info/${id}`,
     {
@@ -11,7 +12,7 @@ async function getTopAiringAnime(id: string) {
   return res.json();
 }
 export default async function page({ params }: any) {
-  const topAiringInfo = await getTopAiringAnime(params.info);
+  const details = await getAnimeDetails(params.home);
   const {
     title,
     image,
@@ -20,7 +21,7 @@ export default async function page({ params }: any) {
     description,
     type,
     status,
-  } = topAiringInfo;
+  } = details;
   return (
     <>
       <Wrapper>

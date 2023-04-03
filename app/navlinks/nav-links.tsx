@@ -8,7 +8,7 @@ export default function NavLinks({ href, children }: any) {
   //   console.log({href , active}); For testing in client side console
 
   return (
-    <Link className={active ? style.active : ""} href={href}>
+    <Link className={active ? "text-secondary" : ""} href={href}>
       {children}
     </Link>
   );
