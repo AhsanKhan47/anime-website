@@ -9,7 +9,7 @@ export default function Nav() {
   return (
     <>
       <Wrapper>
-        <nav className="w-11/12 mx-auto  flex flex-row sm:items-center   items-center justify-between">
+        <nav className="w-11/12 mx-auto my-2 flex flex-row sm:items-center   items-center justify-between">
           <div className="">
             <Link href={`/info`}>
               <Image

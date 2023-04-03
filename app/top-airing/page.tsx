@@ -4,7 +4,7 @@ async function topAiring() {
   const anime = await fetch(
     "https://api.consumet.org/anime/gogoanime/top-airing",
     {
-      cache: "no-store",
+      cache: "force-cache",
     }
   );
   if (!anime.ok) {

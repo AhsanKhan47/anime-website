@@ -6,7 +6,7 @@ async function getAnimeDetails(id: string) {
   const res = await fetch(
     `https://api.consumet.org/anime/gogoanime/info/${id}`,
     {
-      cache: "no-store",
+      cache: "force-cache",
     }
   );
   return res.json();

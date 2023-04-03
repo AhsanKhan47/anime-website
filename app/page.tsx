@@ -5,7 +5,7 @@ async function getRecentEpisodes() {
   const res = await fetch(
     `https://api.consumet.org/anime/gogoanime/recent-episodes`,
     {
-      cache: "no-store",
+      cache: "force-cache",
     }
   );
   if (!res.ok) {
