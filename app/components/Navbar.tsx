@@ -29,7 +29,7 @@ export default function Nav() {
                   <NavLinks href="/">Home</NavLinks>
                 </li>
                 <li className="mx-1 sm:mx-3 hover:text-secondary transition-all font-normal">
-                  <NavLinks href="/recent-episodes">Recent Episodes</NavLinks>
+                  <NavLinks href="/recentepisodes">Recent Episodes</NavLinks>
                 </li>
                 <li className="mx-1 sm:mx-3 hover:text-secondary transition-all font-normal">
                   <NavLinks href="/top-airing">Top Airing</NavLinks>

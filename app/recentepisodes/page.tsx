@@ -23,10 +23,10 @@ export default async function MostPopular() {
     <div>
       <Heading>Recent Episodes</Heading>
       <Wrapper>
-        <ul className="grid grid-cols-2 gap-4 gap-y-16 w-11/12 md:grid-cols-3  mx-auto ">
+        <ul className="grid grid-cols-2 justify-center items-center gap-4 gap-y-16 w-11/12 md:grid-cols-3  mx-auto ">
           {recentEpsData.results.slice(1, 10).map((p: any) => (
             <li key={p.id}>
-              <Link href={`/recent-episodes/${p.id}`}>
+              <Link href={`/recentepisodes/${p.id}`}>
                 <img
                   src={p.image}
                   alt="anime poster"
@@ -41,8 +41,8 @@ export default async function MostPopular() {
                 </p>
                 <p>
                   <Link
-                    href={`/recent-episodes/${p.id}`}
-                    className=" border md:border-2 hover:border-white hover:text-secondary border-secondary transition-all rounded-md px-2 py-1 md:px-6 md:py-2 text-xs md:text-lg"
+                    href={`/recentepisodes/${p.id}`}
+                    className=" border md:border-2 hover:border-white hover:text-secondary border-secondary transition-all rounded-sm md:rounded-md px-2 py-1 md:px-6 md:py-2 my-9 text-xs md:text-lg"
                   >
                     {" "}
                     See info

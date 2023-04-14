@@ -13,7 +13,7 @@ export default function Footer() {
               <Link href="./">Home</Link>
             </li>
             <li className="mx-4 hover:text-secondary">
-              <Link href="./recent-episodes">Recent Episodes</Link>
+              <Link href="./recentepisodes">Recent Episodes</Link>
             </li>
             <li className="hover:text-secondary">
               <Link href="./top-airing"> Top Airing</Link>
