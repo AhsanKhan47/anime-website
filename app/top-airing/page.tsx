@@ -20,7 +20,6 @@ export default async function MostPopular() {
 
   return (
     <div>
-      <div>Anime Movies</div>
       <Wrapper>
         <ul className="grid grid-cols-2 gap-4 gap-y-16 w-11/12 md:grid-cols-3  mx-auto">
           {topAiringData.results.slice(1, 10).map((p: any) => (
